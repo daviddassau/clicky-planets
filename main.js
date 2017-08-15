@@ -29,6 +29,7 @@ var planetHolderDiv = document.getElementById('planetHolder');
 // Variable to grab the div with the showButton id
 var getPlanetsButton = document.getElementById('showButton');
 var inputField = document.getElementById('searchText');
+var clearButton = document.getElementById('clearButton');
 
 // Function to write the content that will appear on the page
 function domString(planetz) {
@@ -82,7 +83,10 @@ inputField.addEventListener('keypress', function(event){
 });
 
 
-
+clearButton.addEventListener('click', function(){
+	inputField.value = "";
+	writeToDom('');
+});
 
 
 
