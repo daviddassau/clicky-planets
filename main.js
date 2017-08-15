@@ -24,9 +24,12 @@ var planets = [{
   url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/260px-Neptune_Full.jpg'
 }];
 
-
+// Variable to grab the div with the planetHolder id
 var planetHolderDiv = document.getElementById('planetHolder');
+// Variable to grab the div with the showButton id
+var getPlanetsButton = document.getElementById('showButton');
 
+// Function to write the content that will appear on the page
 function domString() {
 	var planetString = '';
 	for(var i = 0; i < planets.length; i++){
@@ -37,14 +40,20 @@ function domString() {
 		newPlanet += `</div>`;
 		planetString += newPlanet;
 	}
+	// 
 	writeToDom(planetString);
 }
 
+// Function to write content to dom
 function writeToDom(strang){
 	planetHolderDiv.innerHTML = strang;
 }
 
-domString();
+getPlanetsButton.addEventListener('mouseenter', function(){
+	domString();
+});
+
+
 
 
 
